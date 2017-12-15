@@ -1,0 +1,33 @@
+POS Changes to include Image number in sales invoice item.
+1.frappe-bench/apps/erpnext/erpnext/public/js/pos/pos_selected_item.html
+code for adding data field "Image Number" in pos at line number 6
+<div class="pos-list-row">
+	<div class="cell">{{ __("Image Number") }}:</div>
+	<input type="tel" class="form-control cell pos-item-image-no" value=""/>
+</div>
+
+2. frappe-bench/apps/erpnext/erpnext/accounts/page/pos/pos.js
+	2.1 code for detect change event for image number field on line number 1177.
+	//pos image number customisation
+	$(this.wrapper).on("change", ".pos-item-image-no", function () {
+		var item_code = $(this).parents(".pos-selected-item-action").attr("data-item-code");
+		var image_no = $(this).val();
+		// frappe.throw(str(image_no))
+		me.update_image_number(item_code, image_no)
+		me.update_value()
+	})
+
+	2.2 code for storing the image value in a variable and call set_item_details function on line number 1212
+	// update image number
+	update_image_number: function (item_code, image_no) {
+		var me = this;
+		this.items = this.get_items(item_code);
+		// this.validate_serial_no()
+		this.set_item_details(item_code, "image_number", cstr(image_no));
+	},
+
+	2.3 code for storing value of image number as string on inside set_item_details function line number 1292
+	//for image number set value as string
+			if (field == 'image_number') {
+				d[field] = cstr(value);
+			}
