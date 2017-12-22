@@ -18,6 +18,11 @@ app_license = "GNU General Public Licence"
 # app_include_css = "/assets/studio/css/studio.css"
 # app_include_js = "/assets/studio/js/studio.js"
 
+doc_events = {
+	"Sales Invoice": {
+		"autoname": "studio.studio.sales_invoice.autoname"
+	}
+}
 
 # include js, css files in header of web template
 # web_include_css = "/assets/studio/css/studio.css"
@@ -25,7 +30,10 @@ app_license = "GNU General Public Licence"
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
-
+#page_js = {
+    #"pos”" : "public/js/pos_page_js.js",
+    #"point-of-sale" : "public/js/pos_page_js.js"
+#} # <= this loading is visible only inside POS page
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
