@@ -18,9 +18,17 @@ app_license = "GNU General Public Licence"
 # app_include_css = "/assets/studio/css/studio.css"
 # app_include_js = "/assets/studio/js/studio.js"
 
+doctype_js = {
+	"Sales Order": ["custom_scripts/sales_order.js"],
+	"Sales Invoice": ["custom_scripts/sales_invoice.js"]
+}
+
 doc_events = {
 	"Sales Invoice": {
 		"autoname": "studio.studio.sales_invoice.autoname"
+	},
+	"Sales Order": {
+		"validate": "studio.studio.sales_order.validate"
 	}
 }
 
