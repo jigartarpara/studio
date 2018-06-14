@@ -8,7 +8,7 @@ from frappe.utils import flt, cint, cstr
 from frappe.model.naming import make_autoname
 from frappe import _
 import frappe.defaults
-from six.moves import urllib
+from six.moves import urllib 
 import json
 from frappe.core.doctype.sms_settings.sms_settings import send_sms
 
@@ -89,7 +89,7 @@ def OrderConfirmationSMS(doc, method):
 def QuotationSMS(doc, method):
 	if doc.quotation_sms == 0:
 		sms_sender = frappe.db.get_value("Company",doc.company,"sms_sender")
-		payment_terms = frappe.db.get_value("Company",doc.company,"payment_terms")
+		payment_terms = frappe.db.get_value("Company",doc.company,"ai_payment_terms")
 		phone = frappe.db.get_value("Address",doc.customer_address,"phone")
 		demonstration = frappe.db.get_value("Company",doc.company,"demonstration_link")
 		
