@@ -25,7 +25,8 @@ doctype_js = {
 
 doc_events = {
 	"Sales Invoice": {
-		"autoname": "studio.studio.sales_invoice.autoname"
+		"autoname": "studio.studio.sales_invoice.autoname",
+		"on_submit": "studio.studio.sales_invoice.on_submit"
 	},
 	"Sales Order": {
 		"validate": "studio.studio.sales_order.validate"
