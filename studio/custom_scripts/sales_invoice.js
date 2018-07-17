@@ -12,11 +12,11 @@ cur_frm.fields_dict['items'].grid.get_field('event_detail').get_query = function
 	}
 }
 
-cur_frm.fields_dict['items'].grid.get_field('vendor').get_query = function(doc) {
-	return {
-		 filters: { 'employment_type': 'Vendor' }
-	}
-}
+// cur_frm.fields_dict['items'].grid.get_field('vendor').get_query = function(doc) {
+// 	return {
+// 		 filters: { 'employment_type': 'Vendor' }
+// 	}
+// }
 
 cur_frm.cscript.rate = function(doc, cdt, cdn) {
 	count_total_revenue(doc,cdt,cdn);

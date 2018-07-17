@@ -29,16 +29,15 @@ def on_submit(doc, method):
 
 	if doc.customer and doc.name and doc.grand_total and demonstration and terms_and_conditions:
 		invoice_sms = "Hello {0}, Thank you for dealing with us ! Your invoice {1} has been generated with the amount of {2}. You have paid {3} and {4} is the due amount. You will get the delivery on {5}. Look at our demonstration: {6}. Please follow the link for the TNC: {7}".format(cstr(doc.customer), cstr(doc.name), cstr(doc.grand_total), cstr(doc.paid_amount), cstr(flt(doc.outstanding_amount)), cstr(doc.posting_date), cstr(demonstration), cstr(terms_and_conditions))
-
+		# invoice_sms = 'Hello Nishith, Thank you for dealing with us ! Your invoice OFAP/1819/279 has been generated with the amount of 17700.0. You have paid 0.0 and 17700.0 is the due amount. You will get the delivery on 2018-07-09. Look at our demonstration: www.thestudioom.in, https://www.facebook.com/thestudio.om. Please follow the link for the TNC: https://docs.google.com/file/d/1Vxwr65eoQMyGCvFBM_yBJFWh29s5DtFN/edit?usp=docslist_api&filetype=msword'
+		frappe.msgprint(cstr(invoice_sms))
 		resp =  sendSMSRequest(doc, method, 'UVVzJrmMces-lnseHXCi9BZ2qs5IbUksVOnZjuRNc6', str(phone), sms_sender, invoice_sms)
 		resp = json.loads(resp)
-
+		
 		if resp['status'] == 'success':
 			frappe.msgprint("Invoice message has been sent to customer successfully.")
 		else:
 			frappe.msgprint("There might be some error to send confirmation message. Please try again.")
-	else:
-		frappe.msgprint("Else")
 
 def sendSMSRequest(doc, method,apikey, numbers, sender, message):
 	data =  urllib.parse.urlencode({'apikey': apikey, 'numbers': numbers,

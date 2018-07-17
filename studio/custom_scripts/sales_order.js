@@ -1,14 +1,14 @@
-// cur_frm.fields_dict['items'].grid.get_field('event_detail').get_query = function(doc) {
-	// return {
-		 // filters: { 'item_group': 'Event' }
-	// }
-// }
-
-cur_frm.fields_dict['items'].grid.get_field('vendor').get_query = function(doc) {
+cur_frm.fields_dict['items'].grid.get_field('event_detail').get_query = function(doc) {
 	return {
-		 filters: { 'employment_type': 'Vendor' }
+		 filters: { 'item_group': 'Event' }
 	}
 }
+
+// cur_frm.fields_dict['items'].grid.get_field('vendor').get_query = function(doc) {
+// 	return {
+// 		 filters: { 'employment_type': 'Vendor' }
+// 	}
+// }
 
 // cur_frm.fields_dict['items'].grid.get_field('item_code').get_query = function(doc) {
 	// return {
