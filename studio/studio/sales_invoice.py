@@ -77,6 +77,7 @@ def make_post_production(source_name, target_doc=None, ignore_permissions=False)
 			"doctype": "Deliverable Detail",
 			"field_map": {
 				"item_code": "requirement_of_client",
+				"item_name":"item_name",
 				"deliverable_type":"deliverable_type"
 			},
 			"condition":lambda doc: doc.deliverable_type == "Album" or doc.deliverable_type == "Video"
