@@ -2984,7 +2984,7 @@
   "in_list_view": 0, 
   "in_standard_filter": 0, 
   "insert_after": "due_date", 
-  "label": "Wedding Date", 
+  "label": "Wedding/Event Date", 
   "modified": "2018-01-16 14:15:18.149047", 
   "name": "Sales Invoice-wedding_date", 
   "no_copy": 0, 
