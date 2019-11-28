@@ -24,11 +24,11 @@ frappe.ui.form.on("Sales Order", "before_submit", function(frm, cdt, cdn) {
 	//if(frm.doc.docstatus == 1)
 	//{
 		//alert("hi");
-		this.cur_frm.fields_dict.items.grid.toggle_reqd("item_code", true);
-		this.cur_frm.fields_dict.items.grid.toggle_reqd("item_name", true);
-		this.cur_frm.fields_dict.items.grid.toggle_reqd("description", true);
-		this.cur_frm.fields_dict.items.grid.toggle_reqd("uom", true);
-		this.cur_frm.fields_dict.items.grid.toggle_reqd("conversion_factor", true);
+		cur_frm.fields_dict.items.grid.toggle_reqd("item_code", true);
+		cur_frm.fields_dict.items.grid.toggle_reqd("item_name", true);
+		cur_frm.fields_dict.items.grid.toggle_reqd("description", true);
+		cur_frm.fields_dict.items.grid.toggle_reqd("uom", true);
+		cur_frm.fields_dict.items.grid.toggle_reqd("conversion_factor", true);
 		/*cur_frm.frm.fields_dict.items.grid.toggle_reqd("item_code");
 		cur_frm.get_field("items").grid.toggle_reqd("item_code", true);
 		cur_frm.get_field("items").grid.toggle_reqd("item_name", true);
