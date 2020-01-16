@@ -17,7 +17,7 @@ app_license = "GNU General Public Licence"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/studio/css/studio.css"
 # app_include_js = "/assets/studio/js/studio.js"
-
+fixtures = ["Custom Field"]
 doctype_js = {
 	"Sales Order": ["custom_scripts/sales_order.js"],
 	"Sales Invoice": ["custom_scripts/sales_invoice.js"]
