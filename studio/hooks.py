@@ -30,6 +30,9 @@ doc_events = {
 	},
 	"Sales Order": {
 		"validate": "studio.studio.sales_order.validate"
+	},
+	"Task": {
+		"on_update": "studio.studio.task.validate"
 	}
 }
 
