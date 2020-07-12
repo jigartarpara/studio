@@ -18,5 +18,19 @@ def validate(doc, method):
 	# 				doc.save()
 
 def on_update(doc, method):
-	
-	pass
+	if not doc.event :
+		event = frappe.get_doc({
+			"doctype": "Event",
+			"subject": doc.subject + doc.project ,
+			"event_category": "Event",
+			"event_type": "Public",
+			"starts_on": doc.exp_start_date,
+			"ends_on": doc.exp_end_date,
+			"status": "Open",
+			"description": str(doc.studio_description) + "\n" + str(doc.description)
+		})
+		event.flags.ignore_mandatory = True
+		event.flags.ignore_permissions = True
+		event.insert()
+		doc.event = event.name
+		doc.save()
