@@ -33,4 +33,10 @@ def on_update(doc, method):
 		event.flags.ignore_permissions = True
 		event.insert()
 		doc.event = event.name
-		doc.save()
+		doc.save(ignore_permissions=True)
+	else:
+		event = frappe.get_doc("Event", doc.event)
+		event.starts_on = doc.exp_start_date
+		event.ends_on = doc.exp_end_date
+		event.description = str(doc.studio_description) + "\n" + str(doc.description)
+		event.save(ignore_permissions=True)
