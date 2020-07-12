@@ -32,8 +32,10 @@ doc_events = {
 		"validate": "studio.studio.sales_order.validate"
 	},
 	"Task": {
-		"after_insert": "studio.studio.task.validate",
-		"on_update": "studio.studio.task.validate"
+		"on_update": "studio.studio.task.on_update"
+	},
+	"Project": {
+		"on_update": "studio.studio.project.on_update"
 	}
 }
 
